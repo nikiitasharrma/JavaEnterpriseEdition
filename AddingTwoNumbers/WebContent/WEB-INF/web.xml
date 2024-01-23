@@ -12,4 +12,14 @@
 	  <url-pattern>/add</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	  <servlet-name>Printing</servlet-name>
+	  <servlet-class>com.servlet.PrintServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	  <servlet-name>Printing</servlet-name>
+	  <url-pattern>/print</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
