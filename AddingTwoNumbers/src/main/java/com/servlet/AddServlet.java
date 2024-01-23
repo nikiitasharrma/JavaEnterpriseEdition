@@ -8,8 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
-	
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	/**
+	 * The doPost method internally calls the service method. 
+	 * It is specific to Http Post method requests only, i.e., 
+	 * doesn't deal with Get method requests
+	 */
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
 		int number1 = Integer.parseInt(req.getParameter("num1"));
 		int number2 = Integer.parseInt(req.getParameter("num2"));
