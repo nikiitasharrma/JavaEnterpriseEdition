@@ -3,6 +3,7 @@ package com.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,10 +18,12 @@ public class AddServlet extends HttpServlet {
 		int addition = number1 + number2;
 		
 		/**
-		 * sending a response to the client asking him to redirect to another 
-		 * servlet and passing the required paramteres in the url itself (url rewriting)
+		 * Another way to pass data to another servlet by passing data as a cookie in res
 		 */
-		res.sendRedirect("print?addition=" + addition);
+		Cookie cookie = new Cookie("addition", addition+"");
+		res.addCookie(cookie);
+		
+		res.sendRedirect("print");
 			
 	}
 }
