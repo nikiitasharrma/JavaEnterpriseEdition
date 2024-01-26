@@ -18,7 +18,7 @@ public class AddServlet extends HttpServlet {
 		
 		/**
 		 * sending a response to the client asking him to redirect to another 
-		 * servlet and passing the required paramteres in the url itself
+		 * servlet and passing the required paramteres in the url itself (url rewriting)
 		 */
 		res.sendRedirect("print?addition=" + addition);
 			
