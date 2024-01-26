@@ -9,13 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class PrintServlet extends HttpServlet{
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
-		int number1 = (int) req.getAttribute("number1");
-		int number2 = (int) req.getAttribute("number2");
-		int addition = (int) req.getAttribute("addition");
+		int addition = Integer.parseInt(req.getParameter("addition"));
 		
         PrintWriter out = res.getWriter();
-		out.print("The addition of " + number1 + " and " + number2 + " is: " + addition);
+		out.print("The addition is: " + addition);
 	}
 }
