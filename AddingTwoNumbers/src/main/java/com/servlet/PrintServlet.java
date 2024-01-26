@@ -6,16 +6,17 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class PrintServlet extends HttpServlet{
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
-		int number1 = (int) req.getAttribute("number1");
-		int number2 = (int) req.getAttribute("number2");
-		int addition = (int) req.getAttribute("addition");
+		HttpSession session = req.getSession();
+		
+		int addition = (int) session.getAttribute("addition");
 		
         PrintWriter out = res.getWriter();
-		out.print("The addition of " + number1 + " and " + number2 + " is: " + addition);
+		out.print("The addition of is: " + addition);
 	}
 }
