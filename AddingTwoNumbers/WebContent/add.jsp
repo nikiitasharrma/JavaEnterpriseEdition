@@ -8,7 +8,10 @@
 </head>
 <body bgcolor="cyan">
 	<%
-     out.println("Hello world!");
+     int number1 = Integer.parseInt(request.getParameter("num1"));
+     int number2 = Integer.parseInt(request.getParameter("num2"));
+     int addition = number1 + number2;
+     out.println("Addition is: " + addition);
     %>
 </body>
 </html>
