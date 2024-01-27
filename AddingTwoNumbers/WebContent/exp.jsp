@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="cyan">
-	<%
-     int number1 = Integer.parseInt(request.getParameter("num1"));
-     int number2 = Integer.parseInt(request.getParameter("num2"));
-     int addition = number1 + number2;
-     out.println("Addition is: " + addition);
-    %>
+   <%---- (Expression language is an easier way to get a value instead of lengthy Java code inside Scriptlets)
+     String name = request.getAttribute("label").toString();
+	 out.println(name); 
+   --%>
+   ${label}
 </body>
 </html>
