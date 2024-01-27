@@ -18,7 +18,8 @@ public class AddServlet extends HttpServlet {
 		int addition = number1 + number2;
 		
 		/**
-		 * Another way to pass data to another servlet by passing data as a cookie in res
+		 * Using cookies to pass data with response to the client
+		 * The client sends all cookies with it's next request to the redirected servlet
 		 */
 		Cookie cookie = new Cookie("addition", addition+"");
 		res.addCookie(cookie);
